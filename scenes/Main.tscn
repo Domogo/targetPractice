@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Target.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480.172, 854.289, 0, 0, 0, 0, -0.128517, 854.222, 0, 0, 0, 0, 0, 0 )
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Target" parent="." instance=ExtResource( 3 )]
+
+[node name="CrosshairsPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="CrosshairSpawnLocation" type="PathFollow2D" parent="CrosshairsPath"]
+
+[node name="SessionTimer" type="Timer" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+[connection signal="miss" from="Target" to="." method="game_over"]
+[connection signal="timeout" from="SessionTimer" to="." method="_on_SessionTimer_timeout"]
