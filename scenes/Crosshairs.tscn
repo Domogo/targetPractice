@@ -18,3 +18,4 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Visibility" type="VisibilityNotifier2D" parent="."]
+[connection signal="viewport_exited" from="Visibility" to="." method="_on_Visibility_viewport_exited"]
