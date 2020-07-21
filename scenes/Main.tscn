@@ -32,5 +32,6 @@ curve = SubResource( 1 )
 
 [node name="Screens" parent="." instance=ExtResource( 4 )]
 [connection signal="miss" from="Target" to="." method="game_over"]
+[connection signal="miss" from="Crosshairs" to="." method="game_over"]
 [connection signal="timeout" from="SessionTimer" to="." method="_on_SessionTimer_timeout"]
 [connection signal="start_game" from="Screens" to="." method="new_game"]

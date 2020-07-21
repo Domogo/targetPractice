@@ -1,16 +1,13 @@
 extends Node2D
 
-
 signal miss
 
 
 func _ready():
 	pass
 
-
 func prepare(position):
 	self.position = position
-
 
 func hit_detection(crosshairs):
 	var outer_rim_hit = get_node("OuterRim").overlaps_body(crosshairs)

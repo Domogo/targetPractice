@@ -3,7 +3,6 @@
 [ext_resource path="res://assets/font/Chango-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/ui/HUD.gd" type="Script" id=2]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 48
 font_data = ExtResource( 1 )
@@ -16,6 +15,7 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="ScoreLabel" type="Label" parent="."]
+visible = false
 margin_left = 128.0
 margin_right = 466.0
 margin_bottom = 59.0
@@ -28,6 +28,7 @@ __meta__ = {
 }
 
 [node name="StreakLabel" type="Label" parent="."]
+visible = false
 margin_left = 368.0
 margin_top = 48.0
 margin_right = 465.0
@@ -40,6 +41,7 @@ __meta__ = {
 }
 
 [node name="TimeLabel" type="Label" parent="."]
+visible = false
 margin_left = 368.0
 margin_top = 72.0
 margin_right = 465.0

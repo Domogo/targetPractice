@@ -6,7 +6,6 @@ func calculate_direction(position):
 	var direction = (destination - position).normalized()
 	return direction
 
-
 func generate_random_number():
 	randomize()
 	return randi()

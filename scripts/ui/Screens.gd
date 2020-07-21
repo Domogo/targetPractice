@@ -1,6 +1,5 @@
 extends Node2D
 
-
 signal start_game
 
 var current_screen = null
@@ -10,12 +9,10 @@ func _ready():
 	register_buttons()
 	change_screen($HomeScreen)
 
-
 func register_buttons():
 	var buttons = get_tree().get_nodes_in_group("buttons")
 	for button in buttons:
 		button.connect("pressed", self, "_on_button_pressed", [button.name])
-
 
 func _on_button_pressed(name):
 	match name:
@@ -29,6 +26,8 @@ func _on_button_pressed(name):
 			change_screen($SettingsScreen)
 
 func change_screen(new_screen):
+	if current_screen == new_screen:
+		return
 	if current_screen:
 		current_screen.disappear()
 		yield(current_screen.tween, "tween_completed")
