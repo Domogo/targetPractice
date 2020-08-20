@@ -4,3 +4,5 @@
 # Local History for Visual Studio Code
 .history/
 .import/
+export_presets.cfg
+android/
