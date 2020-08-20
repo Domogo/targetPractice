@@ -1,10 +1,9 @@
 extends Node
 
 
-func calculate_direction(position):
-	var destination = get_viewport().size / 2
-	var direction = (destination - position).normalized()
-	return direction
+func calculate_direction(crosshairPosition, targetPosition):
+	return (targetPosition - crosshairPosition).normalized()
+
 
 func generate_random_number():
 	randomize()

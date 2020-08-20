@@ -1,11 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/font/Chango-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/ui/BaseScreen.gd" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=1]
-size = 48
-font_data = ExtResource( 1 )
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/font/m6x11.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = SubResource( 1 )
 
 [node name="BaseScreen" type="CanvasLayer"]
 offset = Vector2( 500, 0 )
@@ -32,24 +34,25 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 150.0
-margin_bottom = 59.0
-custom_fonts/font = SubResource( 1 )
+margin_right = 108.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0.505882, 0.654902, 1 )
 text = "Title"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 209.0
-margin_right = 150.0
-margin_bottom = 209.0
+margin_top = 206.0
+margin_right = 108.0
+margin_bottom = 206.0
 custom_constants/separation = 75
 
 [node name="Buttons2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 359.0
-margin_right = 150.0
-margin_bottom = 359.0
+margin_top = 356.0
+margin_right = 108.0
+margin_bottom = 356.0
 custom_constants/separation = 75
 
 [node name="Tween" type="Tween" parent="."]

@@ -6,8 +6,9 @@ signal miss
 func _ready():
 	pass
 
-func prepare(position):
-	self.position = position
+func set_target_position():
+	self.position = get_viewport().size / 2 # - $Sprite.texture.get_size() / 4
+
 
 func hit_detection(crosshairs):
 	var outer_rim_hit = get_node("OuterRim").overlaps_body(crosshairs)

@@ -8,11 +8,11 @@ var time = 0
 
 
 func _ready():
-	pass
+	VisualServer.set_default_clear_color(Color("#FED9B7"))
 
 func new_game():
 	reset_on_start()
-	$Target.prepare(get_viewport().size / 2)
+	$Target.set_target_position()
 	prepare_crosshair()
 	$Target.visible = true
 	$Crosshairs.visible = true
@@ -51,7 +51,7 @@ func reset_on_start():
 
 func prepare_crosshair():
 	spawn_location.offset = Util.generate_random_number()
-	var direction = Util.calculate_direction(spawn_location.position)
+	var direction = Util.calculate_direction(spawn_location.position, $Target.position)
 	$Crosshairs.send_new_position_and_velocity(spawn_location.position, direction * speed)
 
 func update_speed():

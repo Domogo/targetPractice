@@ -12,7 +12,8 @@ alignment = 1
 
 [node name="Label" parent="VBoxContainer" index="0"]
 margin_right = 484.0
-text = "Game Over"
+custom_colors/font_color = Color( 0, 0.505882, 0.654902, 1 )
+text = "Game over"
 align = 1
 
 [node name="Buttons" parent="VBoxContainer" index="1"]

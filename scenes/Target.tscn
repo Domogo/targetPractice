@@ -1,20 +1,19 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/img/target.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/targetno.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Target.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 118.07
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 69.3539
+radius = 74.2583
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 26.019
+radius = 36.0496
 
 [node name="Target" type="Node2D"]
 visible = false
-position = Vector2( 2.20526, 0 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -29,7 +28,7 @@ shape = SubResource( 1 )
 [node name="MidRim" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MidRim"]
-position = Vector2( 1.3967, 0 )
+position = Vector2( -0.722196, -1.05948 )
 shape = SubResource( 2 )
 
 [node name="InnerRim" type="Area2D" parent="."]

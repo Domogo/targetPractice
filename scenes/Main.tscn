@@ -12,14 +12,20 @@ _data = {
 }
 
 [node name="Main" type="Node2D"]
+show_behind_parent = true
+light_mask = 131073
+position = Vector2( -2.37842, 0 )
+z_index = -1
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Target" parent="." instance=ExtResource( 3 )]
-
 [node name="Crosshairs" parent="." instance=ExtResource( 5 )]
+z_index = 2
+
+[node name="Target" parent="." instance=ExtResource( 3 )]
+z_index = 1
 
 [node name="CrosshairsPath" type="Path2D" parent="."]
 curve = SubResource( 1 )
@@ -31,7 +37,7 @@ curve = SubResource( 1 )
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
 [node name="Screens" parent="." instance=ExtResource( 4 )]
-[connection signal="miss" from="Target" to="." method="game_over"]
 [connection signal="miss" from="Crosshairs" to="." method="game_over"]
+[connection signal="miss" from="Target" to="." method="game_over"]
 [connection signal="timeout" from="SessionTimer" to="." method="_on_SessionTimer_timeout"]
 [connection signal="start_game" from="Screens" to="." method="new_game"]
