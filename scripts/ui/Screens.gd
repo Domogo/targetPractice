@@ -19,11 +19,11 @@ func _on_button_pressed(name):
 		"HomeButton":
 			change_screen($HomeScreen)
 		"PlayButton":
-			change_screen(null)
-			yield(get_tree().create_timer(0.5), "timeout")
-			emit_signal("start_game")
+			play_game()
 		"SettingsButton":
 			change_screen($SettingsScreen)
+		"ReplayButton":
+			play_game()
 
 func change_screen(new_screen):
 	if current_screen == new_screen:
@@ -38,3 +38,9 @@ func change_screen(new_screen):
 
 func game_over():
 	change_screen($GameOverScreen)
+
+func play_game():
+	change_screen(null)
+	yield(get_tree().create_timer(0.5), "timeout")
+	emit_signal("start_game")
+
