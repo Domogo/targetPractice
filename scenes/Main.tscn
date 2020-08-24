@@ -14,7 +14,6 @@ _data = {
 [node name="Main" type="Node2D"]
 show_behind_parent = true
 light_mask = 131073
-position = Vector2( -2.37842, 0 )
 z_index = -1
 script = ExtResource( 1 )
 __meta__ = {

@@ -7,7 +7,7 @@ func _ready():
 	pass
 
 func set_target_position():
-	self.position = get_viewport().size / 2 - $Sprite.texture.get_size() / 4
+	self.position = get_viewport().size / 2 # - $Sprite.texture.get_size() / 4
 
 
 func hit_detection(crosshairs):
