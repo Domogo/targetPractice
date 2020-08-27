@@ -23,7 +23,7 @@ func _on_Visibility_viewport_exited(_viewport):
 	emit_signal("miss")
 
 
-func send_new_position_and_velocity(new_position, new_velocity):
+func set_new_position_and_velocity(new_position, new_velocity):
 	pos = new_position
 	velocity = new_velocity
 	should_reset = true

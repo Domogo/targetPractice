@@ -3,8 +3,8 @@
 [ext_resource path="res://scripts/Crosshairs.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/crosshair.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 10.8801
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.02261, 4.00136 )
 
 [node name="Crosshairs" type="RigidBody2D"]
 visible = false
@@ -19,4 +19,6 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Visibility" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0.0129315, -0.00675398 )
+scale = Vector2( 0.40949, 0.408197 )
 [connection signal="viewport_exited" from="Visibility" to="." method="_on_Visibility_viewport_exited"]

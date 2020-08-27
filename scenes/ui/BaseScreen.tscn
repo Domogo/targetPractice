@@ -28,7 +28,6 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-custom_constants/separation = 150
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -43,16 +42,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 206.0
+[node name="Score" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 60.0
 margin_right = 108.0
-margin_bottom = 206.0
+margin_bottom = 60.0
 custom_constants/separation = 75
 
-[node name="Buttons2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 356.0
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 64.0
 margin_right = 108.0
-margin_bottom = 356.0
+margin_bottom = 64.0
 custom_constants/separation = 75
 
 [node name="Tween" type="Tween" parent="."]

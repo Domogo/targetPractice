@@ -15,9 +15,9 @@ func hit_detection(crosshairs):
 	var mid_rim_hit = get_node("MidRim").overlaps_body(crosshairs)
 	var inner_rim_hit = get_node("InnerRim").overlaps_body(crosshairs)
 	if inner_rim_hit:
-		return 10
+		return 4
 	elif mid_rim_hit:
-		return 5
+		return 2
 	elif outer_rim_hit:
 		return 1
 	else:

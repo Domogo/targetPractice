@@ -2,13 +2,16 @@ extends Node2D
 
 onready var spawn_location = get_node("CrosshairsPath/CrosshairSpawnLocation")
 var score = 0
-var speed = 100
+var highscore = 0
+var speed = 300
 var perfect_streak = 0
 var time = 0
 
 
 func _ready():
 	VisualServer.set_default_clear_color(Color("#FED9B7"))
+	highscore = Settings.load_score()
+	$Screens/HomeScreen/VBoxContainer/Score/HighscoreLabel.text = str(highscore)
 
 func new_game():
 	reset_on_start()
@@ -23,6 +26,7 @@ func game_over():
 	$SessionTimer.stop()
 	$Target.visible = false
 	$Crosshairs.visible = false
+	update_highscore()
 	$HUD.hide()
 	$Screens.game_over()
 
@@ -52,17 +56,21 @@ func reset_on_start():
 func prepare_crosshair():
 	spawn_location.offset = Util.generate_random_number()
 	var direction = Util.calculate_direction(spawn_location.position, $Target.position)
-	$Crosshairs.send_new_position_and_velocity(spawn_location.position, direction * speed)
+	$Crosshairs.set_new_position_and_velocity(spawn_location.position, direction * speed)
 
 func update_speed():
-	if perfect_streak < 10 or speed <= 1000:
+	if perfect_streak < 10 or speed <= 1500:
 		speed += 10
 
 func handle_points_and_update_HUD(points):
-	if points == 10:
+	if points == 4:
 		perfect_streak += 1
 	else:
 		perfect_streak = 0
 	score += points
 	$HUD.update_score(score)
 	$HUD.update_streak(perfect_streak)
+
+func update_highscore():
+	if score > highscore:
+		Settings.save_score(score)
