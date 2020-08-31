@@ -11,7 +11,7 @@ var time = 0
 func _ready():
 	VisualServer.set_default_clear_color(Color("#FED9B7"))
 	highscore = Settings.load_score()
-	$Screens/HomeScreen/VBoxContainer/Score/HighscoreLabel.text = str(highscore)
+	set_highscore_on_homescreen()
 
 func new_game():
 	reset_on_start()
@@ -73,4 +73,9 @@ func handle_points_and_update_HUD(points):
 
 func update_highscore():
 	if score > highscore:
-		Settings.save_score(score)
+		highscore = score
+		Settings.save_score(highscore)
+		set_highscore_on_homescreen()
+
+func set_highscore_on_homescreen():
+	$Screens/HomeScreen/VBoxContainer/Score/HighscoreLabel.text = str(highscore)
