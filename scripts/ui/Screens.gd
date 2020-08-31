@@ -37,7 +37,8 @@ func change_screen(new_screen):
 		yield(current_screen.tween, "tween_completed")
 
 func game_over():
-	change_screen($GameOverScreen)
+	if !current_screen:
+		change_screen($GameOverScreen)
 
 func play_game():
 	change_screen(null)
