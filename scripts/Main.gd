@@ -32,6 +32,7 @@ func game_over():
 
 func _unhandled_input(event):
 	if event is InputEventScreenTouch and event.pressed:
+		$HitSound.play()
 		var points = $Target.hit_detection($Crosshairs)
 		handle_points_and_update_HUD(points)
 		prepare_crosshair()

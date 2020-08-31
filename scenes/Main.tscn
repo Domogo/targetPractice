@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ui/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Target.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/ui/Screens.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Crosshairs.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/sound/hitSound.wav" type="AudioStream" id=6]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -36,6 +37,9 @@ curve = SubResource( 1 )
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
 [node name="Screens" parent="." instance=ExtResource( 4 )]
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
 [connection signal="miss" from="Crosshairs" to="." method="game_over"]
 [connection signal="miss" from="Target" to="." method="game_over"]
 [connection signal="timeout" from="SessionTimer" to="." method="_on_SessionTimer_timeout"]
