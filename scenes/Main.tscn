@@ -39,6 +39,7 @@ curve = SubResource( 1 )
 [node name="Screens" parent="." instance=ExtResource( 4 )]
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 1, 0 )
 stream = ExtResource( 6 )
 [connection signal="miss" from="Crosshairs" to="." method="game_over"]
 [connection signal="miss" from="Target" to="." method="game_over"]
