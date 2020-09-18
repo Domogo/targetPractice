@@ -26,7 +26,7 @@ alignment = 1
 
 [node name="Label" parent="VBoxContainer" index="0"]
 margin_right = 484.0
-text = "Target Tap"
+text = "Target Practice"
 align = 1
 
 [node name="Score" parent="VBoxContainer" index="1"]
