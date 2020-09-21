@@ -2,6 +2,8 @@
 
 #### TargetTap is a simple android game fully playable on android devices. Sorry Apple, not sorry.
 
+![Download on Google Play](https://play.google.com/store/apps/details?id=org.godotengine.targettap)
+
 #### Purpose
 The sole purpose of this game's existence was for it's creator (me.. duhh) to fully experience the game dev process:
 - coming up with the idea
