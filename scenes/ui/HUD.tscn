@@ -21,28 +21,26 @@ script = ExtResource( 2 )
 
 [node name="ScoreLabel" type="Label" parent="."]
 visible = false
-margin_left = 130.997
-margin_top = 786.625
-margin_right = 468.997
-margin_bottom = 842.625
+margin_left = 28.9706
+margin_top = 20.3937
+margin_right = 366.971
+margin_bottom = 76.3937
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0.505882, 0.654902, 1 )
 text = "0000"
-align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="StreakLabel" type="Label" parent="."]
 visible = false
-margin_left = 368.936
-margin_top = 760.2
-margin_right = 465.936
-margin_bottom = 787.2
+margin_left = 28.9706
+margin_top = 76.3937
+margin_right = 125.971
+margin_bottom = 108.394
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0.505882, 0.654902, 1 )
 text = "x 15"
-align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

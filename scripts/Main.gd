@@ -3,6 +3,7 @@ extends Node2D
 onready var spawn_location = get_node("CrosshairsPath/CrosshairSpawnLocation")
 var score = 0
 var highscore = 0
+var new_highscore = false
 var speed = 300
 var perfect_streak = 0
 var time = 0
@@ -49,7 +50,8 @@ func reset_on_start():
 	score = 0
 	time = 0
 	perfect_streak = 0
-	speed = 100
+	speed = 150
+	new_highscore = false
 	$HUD.update_score(score)
 	$HUD.update_time(time)
 	$HUD.update_streak(perfect_streak)
@@ -75,8 +77,18 @@ func handle_points_and_update_HUD(points):
 func update_highscore():
 	if score > highscore:
 		highscore = score
+		new_highscore = true
 		Settings.save_score(highscore)
-		set_highscore_on_homescreen()
+	set_highscore_on_homescreen()
+	set_highscore_on_gameoverscreen(new_highscore)
 
 func set_highscore_on_homescreen():
 	$Screens/HomeScreen/VBoxContainer/Score/HighscoreLabel.text = str(highscore)
+
+func set_highscore_on_gameoverscreen(is_new_highscore):
+	if is_new_highscore:
+		$Screens/GameOverScreen/VBoxContainer/Score/ScoreLabel.text = "New Highscore!"
+		$Screens/GameOverScreen/VBoxContainer/Score/HighscoreLabel.text = str(highscore)
+	else:
+		$Screens/GameOverScreen/VBoxContainer/Score/ScoreLabel.text = "Your Score:"
+		$Screens/GameOverScreen/VBoxContainer/Score/HighscoreLabel.text = str(score)

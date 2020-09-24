@@ -6,3 +6,5 @@
 .import/
 export_presets.cfg
 android/
+
+*.apk
