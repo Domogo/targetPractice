@@ -76,6 +76,7 @@ size = 64
 font_data = ExtResource( 3 )
 
 [node name="Target" type="Node2D"]
+visible = false
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
