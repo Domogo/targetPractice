@@ -11,10 +11,12 @@ func set_target_position():
 
 
 func hit_detection(crosshairs):
+	$AnimationPlayer.play("hitAnimation")
 	var outer_rim_hit = get_node("OuterRim").overlaps_body(crosshairs)
 	var mid_rim_hit = get_node("MidRim").overlaps_body(crosshairs)
 	var inner_rim_hit = get_node("InnerRim").overlaps_body(crosshairs)
 	if inner_rim_hit:
+		$AnimationPlayer.play("centerHitAnimation")
 		return 4
 	elif mid_rim_hit:
 		return 2
