@@ -1,6 +1,6 @@
-# targetTap
+# Target Practice
 
-#### TargetTap is a simple android game fully playable on android devices. Sorry Apple, not sorry.
+#### Target Practice is a simple android game fully playable on android devices. Sorry Apple, not sorry.
 
 [Download on Google Play](https://play.google.com/store/apps/details?id=org.godotengine.targettap)
 
